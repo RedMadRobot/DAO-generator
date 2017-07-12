@@ -1,0 +1,3 @@
+[submodule "Source/DaoGenerator/DaoGenerator/Libraries"]
+	path = Source/DaoGenerator/DaoGenerator/Libraries
+	url = git@github.com:RedMadRobot/model-compiler.git

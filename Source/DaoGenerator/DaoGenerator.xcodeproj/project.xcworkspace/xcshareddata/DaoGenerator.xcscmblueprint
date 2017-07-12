@@ -1,21 +1,35 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "62442B2B393374B3E07032E67226F48C0A00FA96",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "50C411A78BD10D7770EF8E63A8CA909172CAF942",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "50C411A78BD10D7770EF8E63A8CA909172CAF942" : 9223372036854775807,
     "62442B2B393374B3E07032E67226F48C0A00FA96" : 0,
-    "87FD3BC6D3E17C3D75400C87E1BACDC7CB4DFFF9" : 0
+    "87FD3BC6D3E17C3D75400C87E1BACDC7CB4DFFF9" : 0,
+    "271DFCECD334F3035197E7DF0FA8B0A49CD5793C" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6D705977-92E5-4FD9-91E9-75DF49461881",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "50C411A78BD10D7770EF8E63A8CA909172CAF942" : "DAO-generator\/",
     "62442B2B393374B3E07032E67226F48C0A00FA96" : "DaoGenerator\/",
-    "87FD3BC6D3E17C3D75400C87E1BACDC7CB4DFFF9" : "DaoGenerator\/Source\/DaoGenerator\/DaoGenerator\/Libraries\/"
+    "87FD3BC6D3E17C3D75400C87E1BACDC7CB4DFFF9" : "DaoGenerator\/Source\/DaoGenerator\/DaoGenerator\/Libraries\/",
+    "271DFCECD334F3035197E7DF0FA8B0A49CD5793C" : "DAO-generator\/Source\/DaoGenerator\/DaoGenerator\/Libraries\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "DaoGenerator",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Source\/DaoGenerator\/DaoGenerator.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:RedMadRobot\/model-compiler.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "271DFCECD334F3035197E7DF0FA8B0A49CD5793C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:RedMadRobot\/DAO-generator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "50C411A78BD10D7770EF8E63A8CA909172CAF942"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.redmadrobot.com\/zhorkov023\/DaoGenerator.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",

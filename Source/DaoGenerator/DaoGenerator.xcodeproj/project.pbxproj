@@ -90,7 +90,6 @@
 		DF2AFF081D1067E200A00382 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DFB881BF1D16CA48000BFE7D /* ModelImplementationWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelImplementationWriter.swift; sourceTree = "<group>"; };
 		DFF9749A1D12E03D008ADFA5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		DFF9749B1D12E03D008ADFA5 /* ModelCompiler.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ModelCompiler.podspec; sourceTree = "<group>"; };
 		DFF974EA1D12E2A8008ADFA5 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		DFF974EC1D12E2A8008ADFA5 /* CheckedFileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedFileWriter.swift; sourceTree = "<group>"; };
 		DFF974ED1D12E2A8008ADFA5 /* FileListFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListFetcher.swift; sourceTree = "<group>"; };
@@ -248,7 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				DFF9749A1D12E03D008ADFA5 /* .gitignore */,
-				DFF9749B1D12E03D008ADFA5 /* ModelCompiler.podspec */,
 				DFF9749D1D12E03D008ADFA5 /* Source */,
 			);
 			path = Libraries;
