@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAC87F0A1EFD17F100A0B3C6 /* Composer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EE11EFD179100A0B3C6 /* Composer.swift */; };
+		AAC87F0B1EFD17F100A0B3C6 /* ComposerApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EE21EFD179100A0B3C6 /* ComposerApplication.swift */; };
+		AAC87F0C1EFD17F100A0B3C6 /* ExecutionParametersReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EE41EFD179100A0B3C6 /* ExecutionParametersReader.swift */; };
+		AAC87F0D1EFD17F100A0B3C6 /* FileFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EE51EFD179100A0B3C6 /* FileFinder.swift */; };
+		AAC87F0E1EFD17F100A0B3C6 /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EE61EFD179100A0B3C6 /* FileWriter.swift */; };
+		AAC87F0F1EFD17F100A0B3C6 /* SourceCodeFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EE71EFD179100A0B3C6 /* SourceCodeFileReader.swift */; };
+		AAC87F101EFD17F100A0B3C6 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EE81EFD179100A0B3C6 /* Log.swift */; };
+		AAC87F111EFD17F100A0B3C6 /* ExecutionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EEA1EFD179100A0B3C6 /* ExecutionParameters.swift */; };
+		AAC87F121EFD17F100A0B3C6 /* Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EEB1EFD179100A0B3C6 /* Implementation.swift */; };
+		AAC87F141EFD17F100A0B3C6 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EF01EFD179100A0B3C6 /* Compiler.swift */; };
+		AAC87F151EFD17F100A0B3C6 /* AnnotationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EF31EFD179100A0B3C6 /* AnnotationParser.swift */; };
+		AAC87F161EFD17F100A0B3C6 /* ArgumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EF41EFD179100A0B3C6 /* ArgumentParser.swift */; };
+		AAC87F171EFD17F100A0B3C6 /* KlassContentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EF51EFD179100A0B3C6 /* KlassContentParser.swift */; };
+		AAC87F181EFD17F100A0B3C6 /* KlassParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EF61EFD179100A0B3C6 /* KlassParser.swift */; };
+		AAC87F191EFD17F100A0B3C6 /* MethodParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EF71EFD179100A0B3C6 /* MethodParser.swift */; };
+		AAC87F1A1EFD17F100A0B3C6 /* PropertyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EF81EFD179100A0B3C6 /* PropertyParser.swift */; };
+		AAC87F1B1EFD17F100A0B3C6 /* TypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EF91EFD179100A0B3C6 /* TypeParser.swift */; };
+		AAC87F1C1EFD17F100A0B3C6 /* String+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EFB1EFD179100A0B3C6 /* String+Line.swift */; };
+		AAC87F1D1EFD17F100A0B3C6 /* String+Truncate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EFC1EFD179100A0B3C6 /* String+Truncate.swift */; };
+		AAC87F1E1EFD17F100A0B3C6 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EFE1EFD179100A0B3C6 /* Annotation.swift */; };
+		AAC87F1F1EFD17F100A0B3C6 /* Argument.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87EFF1EFD179100A0B3C6 /* Argument.swift */; };
+		AAC87F201EFD17F100A0B3C6 /* CompilerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87F001EFD179100A0B3C6 /* CompilerMessage.swift */; };
+		AAC87F211EFD17F100A0B3C6 /* Klass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87F011EFD179100A0B3C6 /* Klass.swift */; };
+		AAC87F221EFD17F100A0B3C6 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87F021EFD179100A0B3C6 /* Method.swift */; };
+		AAC87F231EFD17F100A0B3C6 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87F031EFD179100A0B3C6 /* Property.swift */; };
+		AAC87F241EFD17F100A0B3C6 /* SourceCodeFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87F041EFD179100A0B3C6 /* SourceCodeFile.swift */; };
+		AAC87F251EFD17F100A0B3C6 /* SourceCodeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87F051EFD179100A0B3C6 /* SourceCodeLine.swift */; };
+		AAC87F261EFD17F100A0B3C6 /* Typê.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC87F061EFD179100A0B3C6 /* Typê.swift */; };
+		DF2AFF091D1067E200A00382 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2AFF081D1067E200A00382 /* main.swift */; };
+		DFB881C01D16CA48000BFE7D /* ModelImplementationWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB881BF1D16CA48000BFE7D /* ModelImplementationWriter.swift */; };
+		DFF974F41D12E2A8008ADFA5 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF974EA1D12E2A8008ADFA5 /* Application.swift */; };
+		DFF974F51D12E2A8008ADFA5 /* CheckedFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF974EC1D12E2A8008ADFA5 /* CheckedFileWriter.swift */; };
+		DFF974F61D12E2A8008ADFA5 /* FileListFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF974ED1D12E2A8008ADFA5 /* FileListFetcher.swift */; };
+		DFF974F71D12E2A8008ADFA5 /* TranslatorImplementationWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF974EF1D12E2A8008ADFA5 /* TranslatorImplementationWriter.swift */; };
+		DFF974F91D12E2A8008ADFA5 /* Klass+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF974F21D12E2A8008ADFA5 /* Klass+Parser.swift */; };
+		DFF974FA1D12E2A8008ADFA5 /* Property+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF974F31D12E2A8008ADFA5 /* Property+Parser.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DF2AFEF41D1064DA00A00382 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AAC87EE11EFD179100A0B3C6 /* Composer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composer.swift; sourceTree = "<group>"; };
+		AAC87EE21EFD179100A0B3C6 /* ComposerApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerApplication.swift; sourceTree = "<group>"; };
+		AAC87EE41EFD179100A0B3C6 /* ExecutionParametersReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionParametersReader.swift; sourceTree = "<group>"; };
+		AAC87EE51EFD179100A0B3C6 /* FileFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFinder.swift; sourceTree = "<group>"; };
+		AAC87EE61EFD179100A0B3C6 /* FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
+		AAC87EE71EFD179100A0B3C6 /* SourceCodeFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCodeFileReader.swift; sourceTree = "<group>"; };
+		AAC87EE81EFD179100A0B3C6 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		AAC87EEA1EFD179100A0B3C6 /* ExecutionParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionParameters.swift; sourceTree = "<group>"; };
+		AAC87EEB1EFD179100A0B3C6 /* Implementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Implementation.swift; sourceTree = "<group>"; };
+		AAC87EF01EFD179100A0B3C6 /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
+		AAC87EF31EFD179100A0B3C6 /* AnnotationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationParser.swift; sourceTree = "<group>"; };
+		AAC87EF41EFD179100A0B3C6 /* ArgumentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentParser.swift; sourceTree = "<group>"; };
+		AAC87EF51EFD179100A0B3C6 /* KlassContentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlassContentParser.swift; sourceTree = "<group>"; };
+		AAC87EF61EFD179100A0B3C6 /* KlassParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlassParser.swift; sourceTree = "<group>"; };
+		AAC87EF71EFD179100A0B3C6 /* MethodParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodParser.swift; sourceTree = "<group>"; };
+		AAC87EF81EFD179100A0B3C6 /* PropertyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyParser.swift; sourceTree = "<group>"; };
+		AAC87EF91EFD179100A0B3C6 /* TypeParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeParser.swift; sourceTree = "<group>"; };
+		AAC87EFB1EFD179100A0B3C6 /* String+Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Line.swift"; sourceTree = "<group>"; };
+		AAC87EFC1EFD179100A0B3C6 /* String+Truncate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Truncate.swift"; sourceTree = "<group>"; };
+		AAC87EFE1EFD179100A0B3C6 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		AAC87EFF1EFD179100A0B3C6 /* Argument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Argument.swift; sourceTree = "<group>"; };
+		AAC87F001EFD179100A0B3C6 /* CompilerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerMessage.swift; sourceTree = "<group>"; };
+		AAC87F011EFD179100A0B3C6 /* Klass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Klass.swift; sourceTree = "<group>"; };
+		AAC87F021EFD179100A0B3C6 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		AAC87F031EFD179100A0B3C6 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		AAC87F041EFD179100A0B3C6 /* SourceCodeFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCodeFile.swift; sourceTree = "<group>"; };
+		AAC87F051EFD179100A0B3C6 /* SourceCodeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCodeLine.swift; sourceTree = "<group>"; };
+		AAC87F061EFD179100A0B3C6 /* Typê.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typê.swift"; sourceTree = "<group>"; };
+		DF2AFEF61D1064DA00A00382 /* DaoGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DaoGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF2AFF081D1067E200A00382 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		DFB881BF1D16CA48000BFE7D /* ModelImplementationWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelImplementationWriter.swift; sourceTree = "<group>"; };
+		DFF9749A1D12E03D008ADFA5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DFF9749B1D12E03D008ADFA5 /* ModelCompiler.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ModelCompiler.podspec; sourceTree = "<group>"; };
+		DFF974EA1D12E2A8008ADFA5 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		DFF974EC1D12E2A8008ADFA5 /* CheckedFileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedFileWriter.swift; sourceTree = "<group>"; };
+		DFF974ED1D12E2A8008ADFA5 /* FileListFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListFetcher.swift; sourceTree = "<group>"; };
+		DFF974EF1D12E2A8008ADFA5 /* TranslatorImplementationWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslatorImplementationWriter.swift; sourceTree = "<group>"; };
+		DFF974F21D12E2A8008ADFA5 /* Klass+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Klass+Parser.swift"; sourceTree = "<group>"; };
+		DFF974F31D12E2A8008ADFA5 /* Property+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Property+Parser.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF2AFEF31D1064DA00A00382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAC87EDF1EFD179100A0B3C6 /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EE01EFD179100A0B3C6 /* Classes */,
+			);
+			name = Composer;
+			path = ModelCompiler/Composer;
+			sourceTree = "<group>";
+		};
+		AAC87EE01EFD179100A0B3C6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EE11EFD179100A0B3C6 /* Composer.swift */,
+				AAC87EE21EFD179100A0B3C6 /* ComposerApplication.swift */,
+				AAC87EE31EFD179100A0B3C6 /* Helper */,
+				AAC87EE81EFD179100A0B3C6 /* Log.swift */,
+				AAC87EE91EFD179100A0B3C6 /* Model */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AAC87EE31EFD179100A0B3C6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EE41EFD179100A0B3C6 /* ExecutionParametersReader.swift */,
+				AAC87EE51EFD179100A0B3C6 /* FileFinder.swift */,
+				AAC87EE61EFD179100A0B3C6 /* FileWriter.swift */,
+				AAC87EE71EFD179100A0B3C6 /* SourceCodeFileReader.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		AAC87EE91EFD179100A0B3C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EEA1EFD179100A0B3C6 /* ExecutionParameters.swift */,
+				AAC87EEB1EFD179100A0B3C6 /* Implementation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAC87EEE1EFD179100A0B3C6 /* ModelCompiler */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EEF1EFD179100A0B3C6 /* Classes */,
+			);
+			name = ModelCompiler;
+			path = ModelCompiler/ModelCompiler;
+			sourceTree = "<group>";
+		};
+		AAC87EEF1EFD179100A0B3C6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EF01EFD179100A0B3C6 /* Compiler.swift */,
+				AAC87EF11EFD179100A0B3C6 /* Helper */,
+				AAC87EFD1EFD179100A0B3C6 /* Model */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AAC87EF11EFD179100A0B3C6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EF21EFD179100A0B3C6 /* Parser */,
+				AAC87EFA1EFD179100A0B3C6 /* String */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		AAC87EF21EFD179100A0B3C6 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EF31EFD179100A0B3C6 /* AnnotationParser.swift */,
+				AAC87EF41EFD179100A0B3C6 /* ArgumentParser.swift */,
+				AAC87EF51EFD179100A0B3C6 /* KlassContentParser.swift */,
+				AAC87EF61EFD179100A0B3C6 /* KlassParser.swift */,
+				AAC87EF71EFD179100A0B3C6 /* MethodParser.swift */,
+				AAC87EF81EFD179100A0B3C6 /* PropertyParser.swift */,
+				AAC87EF91EFD179100A0B3C6 /* TypeParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		AAC87EFA1EFD179100A0B3C6 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EFB1EFD179100A0B3C6 /* String+Line.swift */,
+				AAC87EFC1EFD179100A0B3C6 /* String+Truncate.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		AAC87EFD1EFD179100A0B3C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EFE1EFD179100A0B3C6 /* Annotation.swift */,
+				AAC87EFF1EFD179100A0B3C6 /* Argument.swift */,
+				AAC87F001EFD179100A0B3C6 /* CompilerMessage.swift */,
+				AAC87F011EFD179100A0B3C6 /* Klass.swift */,
+				AAC87F021EFD179100A0B3C6 /* Method.swift */,
+				AAC87F031EFD179100A0B3C6 /* Property.swift */,
+				AAC87F041EFD179100A0B3C6 /* SourceCodeFile.swift */,
+				AAC87F051EFD179100A0B3C6 /* SourceCodeLine.swift */,
+				AAC87F061EFD179100A0B3C6 /* Typê.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF2AFEED1D1064DA00A00382 = {
+			isa = PBXGroup;
+			children = (
+				DF2AFF021D1067E200A00382 /* DaoGenerator */,
+				DF2AFEF71D1064DA00A00382 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF2AFEF71D1064DA00A00382 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF2AFEF61D1064DA00A00382 /* DaoGenerator */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF2AFF021D1067E200A00382 /* DaoGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				DFF974E91D12E2A8008ADFA5 /* Classes */,
+				DFF974991D12E03D008ADFA5 /* Libraries */,
+				DF2AFF081D1067E200A00382 /* main.swift */,
+			);
+			path = DaoGenerator;
+			sourceTree = "<group>";
+		};
+		DFF974991D12E03D008ADFA5 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				DFF9749A1D12E03D008ADFA5 /* .gitignore */,
+				DFF9749B1D12E03D008ADFA5 /* ModelCompiler.podspec */,
+				DFF9749D1D12E03D008ADFA5 /* Source */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		DFF9749D1D12E03D008ADFA5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AAC87EDF1EFD179100A0B3C6 /* Composer */,
+				AAC87EEE1EFD179100A0B3C6 /* ModelCompiler */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		DFF974E91D12E2A8008ADFA5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DFF974EA1D12E2A8008ADFA5 /* Application.swift */,
+				DFF974EB1D12E2A8008ADFA5 /* Helper */,
+				DFF974F01D12E2A8008ADFA5 /* Model */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DFF974EB1D12E2A8008ADFA5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DFF974EC1D12E2A8008ADFA5 /* CheckedFileWriter.swift */,
+				DFF974ED1D12E2A8008ADFA5 /* FileListFetcher.swift */,
+				DFF974EE1D12E2A8008ADFA5 /* Writer */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		DFF974EE1D12E2A8008ADFA5 /* Writer */ = {
+			isa = PBXGroup;
+			children = (
+				DFB881BF1D16CA48000BFE7D /* ModelImplementationWriter.swift */,
+				DFF974EF1D12E2A8008ADFA5 /* TranslatorImplementationWriter.swift */,
+			);
+			path = Writer;
+			sourceTree = "<group>";
+		};
+		DFF974F01D12E2A8008ADFA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFF974F21D12E2A8008ADFA5 /* Klass+Parser.swift */,
+				DFF974F31D12E2A8008ADFA5 /* Property+Parser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF2AFEF51D1064DA00A00382 /* DaoGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF2AFEFD1D1064DA00A00382 /* Build configuration list for PBXNativeTarget "DaoGenerator" */;
+			buildPhases = (
+				DF2AFEF21D1064DA00A00382 /* Sources */,
+				DF2AFEF31D1064DA00A00382 /* Frameworks */,
+				DF2AFEF41D1064DA00A00382 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaoGenerator;
+			productName = DaoGenerator;
+			productReference = DF2AFEF61D1064DA00A00382 /* DaoGenerator */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF2AFEEE1D1064DA00A00382 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Redmadrobot;
+				TargetAttributes = {
+					DF2AFEF51D1064DA00A00382 = {
+						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = DF2AFEF11D1064DA00A00382 /* Build configuration list for PBXProject "DaoGenerator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DF2AFEED1D1064DA00A00382;
+			productRefGroup = DF2AFEF71D1064DA00A00382 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF2AFEF51D1064DA00A00382 /* DaoGenerator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF2AFEF21D1064DA00A00382 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAC87F0A1EFD17F100A0B3C6 /* Composer.swift in Sources */,
+				AAC87F0B1EFD17F100A0B3C6 /* ComposerApplication.swift in Sources */,
+				AAC87F0C1EFD17F100A0B3C6 /* ExecutionParametersReader.swift in Sources */,
+				AAC87F0D1EFD17F100A0B3C6 /* FileFinder.swift in Sources */,
+				AAC87F0E1EFD17F100A0B3C6 /* FileWriter.swift in Sources */,
+				AAC87F0F1EFD17F100A0B3C6 /* SourceCodeFileReader.swift in Sources */,
+				AAC87F101EFD17F100A0B3C6 /* Log.swift in Sources */,
+				AAC87F111EFD17F100A0B3C6 /* ExecutionParameters.swift in Sources */,
+				AAC87F121EFD17F100A0B3C6 /* Implementation.swift in Sources */,
+				AAC87F141EFD17F100A0B3C6 /* Compiler.swift in Sources */,
+				AAC87F151EFD17F100A0B3C6 /* AnnotationParser.swift in Sources */,
+				AAC87F161EFD17F100A0B3C6 /* ArgumentParser.swift in Sources */,
+				AAC87F171EFD17F100A0B3C6 /* KlassContentParser.swift in Sources */,
+				AAC87F181EFD17F100A0B3C6 /* KlassParser.swift in Sources */,
+				AAC87F191EFD17F100A0B3C6 /* MethodParser.swift in Sources */,
+				AAC87F1A1EFD17F100A0B3C6 /* PropertyParser.swift in Sources */,
+				AAC87F1B1EFD17F100A0B3C6 /* TypeParser.swift in Sources */,
+				AAC87F1C1EFD17F100A0B3C6 /* String+Line.swift in Sources */,
+				AAC87F1D1EFD17F100A0B3C6 /* String+Truncate.swift in Sources */,
+				AAC87F1E1EFD17F100A0B3C6 /* Annotation.swift in Sources */,
+				AAC87F1F1EFD17F100A0B3C6 /* Argument.swift in Sources */,
+				AAC87F201EFD17F100A0B3C6 /* CompilerMessage.swift in Sources */,
+				AAC87F211EFD17F100A0B3C6 /* Klass.swift in Sources */,
+				AAC87F221EFD17F100A0B3C6 /* Method.swift in Sources */,
+				AAC87F231EFD17F100A0B3C6 /* Property.swift in Sources */,
+				AAC87F241EFD17F100A0B3C6 /* SourceCodeFile.swift in Sources */,
+				AAC87F251EFD17F100A0B3C6 /* SourceCodeLine.swift in Sources */,
+				AAC87F261EFD17F100A0B3C6 /* Typê.swift in Sources */,
+				DFF974F41D12E2A8008ADFA5 /* Application.swift in Sources */,
+				DFF974F61D12E2A8008ADFA5 /* FileListFetcher.swift in Sources */,
+				DFB881C01D16CA48000BFE7D /* ModelImplementationWriter.swift in Sources */,
+				DFF974FA1D12E2A8008ADFA5 /* Property+Parser.swift in Sources */,
+				DFF974F71D12E2A8008ADFA5 /* TranslatorImplementationWriter.swift in Sources */,
+				DFF974F51D12E2A8008ADFA5 /* CheckedFileWriter.swift in Sources */,
+				DF2AFF091D1067E200A00382 /* main.swift in Sources */,
+				DFF974F91D12E2A8008ADFA5 /* Klass+Parser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DF2AFEFB1D1064DA00A00382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DF2AFEFC1D1064DA00A00382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		DF2AFEFE1D1064DA00A00382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DF2AFEFF1D1064DA00A00382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF2AFEF11D1064DA00A00382 /* Build configuration list for PBXProject "DaoGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF2AFEFB1D1064DA00A00382 /* Debug */,
+				DF2AFEFC1D1064DA00A00382 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF2AFEFD1D1064DA00A00382 /* Build configuration list for PBXNativeTarget "DaoGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF2AFEFE1D1064DA00A00382 /* Debug */,
+				DF2AFEFF1D1064DA00A00382 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DF2AFEEE1D1064DA00A00382 /* Project object */;
+}
