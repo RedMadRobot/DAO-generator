@@ -84,7 +84,7 @@ Table provides reference for type convertion from Entity to Entry properties:
 
 **1. Add submodule to your project.**
 
-`git@git.redmadrobot.com:foundation-ios/DaoGenerator.git`
+`git@github.com:RedMadRobot/DAO-generator.git`
 
 **2. Run `build.command` to build executable file.**
 
