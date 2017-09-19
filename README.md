@@ -1,7 +1,15 @@
 DAOGenerator
 =====
 
-Code generation utility for database objects(entry) and Translators based on Entity classes annotations for Realm in Swift. See more [DAO](https://github.com/RedMadRobot/DAO).
+Imagine you want to save your objects in a database. It's not complicated so often, but little amount of engineers understand databases completely. This leads to buggy code, especially if you pass objects through threads and so on. 
+In this situation you can abstract from specific database and use iniversal CRUD interface. So you can use our library called [DAO](https://github.com/RedMadRobot/DAO).
+The problem is your count of model objects increases more boilerplate code you should type. This library will help you to save your time writing Translators and database objects(Entry) based on Entity classes annotations.
+
+Now supports Realm database and Swift language.
+
+See more [DAO](https://github.com/RedMadRobot/DAO).
+
+Just remember two annotations – `@model` and `@realm`. 
 
 For example you have entity class
 
@@ -35,7 +43,7 @@ class Folder: Entity {
 
 ```
 
-Then it's boring to write entry and translator by hands. Utility will generate two classes in separate files. Entry class:
+Utility will generate two classes in separate files. Entry class:
 
 ```swift
 class DBFolder: RLMEntry {
