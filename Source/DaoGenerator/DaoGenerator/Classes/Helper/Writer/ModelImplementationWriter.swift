@@ -128,36 +128,36 @@ private extension ModelImplementationWriter {
         switch type {
         case .BoolType:
             if type == parameter.type {
-                statement = "dynamic var \(parameter.name) = false"
+                statement = "@objc dynamic var \(parameter.name) = false"
             } else {
                 statement = "let \(parameter.name) = RealmOptional<Bool>()"
             }
         case .IntType:
             if type == parameter.type {
-                statement = "dynamic var \(parameter.name) = 0"
+                statement = "@objc dynamic var \(parameter.name) = 0"
             } else {
                 statement = "let \(parameter.name) = RealmOptional<Int>()"
             }
         case .FloatType:
             if type == parameter.type {
-                statement = "dynamic var \(parameter.name): Float = 0.0"
+                statement = "@objc dynamic var \(parameter.name): Float = 0.0"
             } else {
                 statement = "let \(parameter.name) = RealmOptional<Float>()"
             }
         case .DoubleType:
             if type == parameter.type {
-                statement = "dynamic var \(parameter.name): Double = 0.0"
+                statement = "@objc dynamic var \(parameter.name): Double = 0.0"
             } else {
                 statement = "let \(parameter.name) = RealmOptional<Double>()"
             }
         case .DateType:
-            statement = "dynamic var \(parameter.name): \(parameter.type.description)"
+            statement = "@objc dynamic var \(parameter.name): \(parameter.type.description)"
             defaultValue = "Date(timeIntervalSince1970: 1)"
         case .DataType:
-            statement = "dynamic var \(parameter.name): \(parameter.type.description)"
+            statement = "@objc dynamic var \(parameter.name): \(parameter.type.description)"
             defaultValue = "Data()"
         case .StringType:
-            statement = "dynamic var \(parameter.name): \(parameter.type.description)"
+            statement = "@objc dynamic var \(parameter.name): \(parameter.type.description)"
             defaultValue = "\"\""
         case .ObjectType:
             statement = "dynamic var \(parameter.name): DB\(type)?"
