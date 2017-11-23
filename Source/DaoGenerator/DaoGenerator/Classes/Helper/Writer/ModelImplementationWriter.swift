@@ -160,8 +160,31 @@ private extension ModelImplementationWriter {
             statement = "@objc dynamic var \(parameter.name): \(parameter.type.description)"
             defaultValue = "\"\""
         case .ObjectType:
-            statement = "dynamic var \(parameter.name): DB\(type)?"
+            statement = "@objc dynamic var \(parameter.name): DB\(type)?"
             defaultValue = "nil"
+        case .ArrayType(item: let t):
+            switch t {
+            case .ObjectType(let typename):
+                statement = "let \(parameter.name) = List<DB\(typename)>()"
+            case .IntType:
+                statement = "let \(parameter.name) = List<RLMInteger>()"
+            case .DateType:
+                statement = "let \(parameter.name) = List<RLMDate>()"
+            case .DataType:
+                statement = "let \(parameter.name) = List<RLMData>()"
+            case .DoubleType:
+                statement = "let \(parameter.name) = List<RLMDouble>()"
+            case .StringType:
+                statement = "let \(parameter.name) = List<RLMString>()"
+            case .FloatType:
+                statement = "let \(parameter.name) = List<RLMFloat>()"
+            case .BoolType:
+                statement = "let \(parameter.name) = List<RLMBool>()"
+            case .ArrayType, .MapType:
+                statement = "TODO"
+            default:
+                fatalError()
+            }
         default:
             fatalError()
         }
