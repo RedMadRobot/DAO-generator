@@ -46,11 +46,7 @@ class TranslatorImplementationWriter {
                 .addBlankLine()
 
         let headImportsTranslatorObject: String = headImports
-                .addLine("class \(klass.name)DAOTranslator: RealmTranslator<\(klass.name), DB\(klass.name)> {")
-                .addBlankLine()
-
-        let requiredInit = ""
-                .addLine("required init() {}")
+                .addLine("final class \(klass.name)DAOTranslator: RealmTranslator<\(klass.name), DB\(klass.name)> {")
                 .addBlankLine()
 
         let inheritedProperties: [Property] = fetchInheritedProperties(
@@ -58,7 +54,7 @@ class TranslatorImplementationWriter {
                 availableClassSpecifications: klasses)
                 .filter({ $0.realm() })
 
-        let toEntry = requiredInit
+        let toEntry = ""
                 .addLine("override func fill(_ entity: \(klass.name), fromEntry: DB\(klass.name)) {")
                 .addLine("entity.entityId = fromEntry.entryId".indent())
                 .append(try self.entryLines(
@@ -98,6 +94,7 @@ class TranslatorImplementationWriter {
 
 private extension TranslatorImplementationWriter {
 
+    // fill entity
     func entryLines(klasses: [Klass], properties: [Property]) throws -> String {
         return properties.reduce("") { (line: String, p: Property) -> String in
             switch p.type {
@@ -114,6 +111,9 @@ private extension TranslatorImplementationWriter {
                  .OptionalType(wrapped: .FloatType):
                 return line
                     .addLine("entity.\(p.name) = fromEntry.\(p.name).value")
+            case .OptionalType(wrapped: .ArrayType(item: _)):
+                return line
+                    .addLine("entity.\(p.name) = fromEntry.\(p.name).map { $0.value }")
             default:
                 switch p.type {
                 // Relationship
@@ -121,54 +121,18 @@ private extension TranslatorImplementationWriter {
                     return line
                         .addLine("if let entry = fromEntry.\(p.name) {")
                         .addLine("\(typename)DAOTranslator().fill(entity.\(p.name), fromEntry: entry)".indent())
-                        .addLine("entity.\(p.name) = \(p.name)".indent())
                         .addLine("}")
                 // Collection
                 case .ArrayType(let objectType):
                     switch objectType {
                     case .ObjectType(let typename):
                         return line
-                                .addLine("\(typename)DAOTranslator().fill(&entity.\(p.name), fromEntries: fromEntry.\(p.name))")
+                            .addLine("\(typename)DAOTranslator().fill(&entity.\(p.name), fromEntries: fromEntry.\(p.name))")
                     case .ArrayType, .MapType:
                         fatalError()
-                    case .StringType:
-                        return line
-                                .addLine("entry.\(p.name).removeAll()")
-                                .addLine("let \(p.name) = fromEntry.\(p.name).map { RLMString(val: $0) }")
-                                .addLine("entry.\(p.name).append(objectsIn: \(p.name))")
-                    case .IntType:
-                        return line
-                                .addLine("entry.\(p.name).removeAll()")
-                                .addLine("let \(p.name) = fromEntry.\(p.name).map { RLMInteger(val: $0) }")
-                                .addLine("entry.\(p.name).append(objectsIn: \(p.name))")
-                    case .DateType:
-                        return line
-                                .addLine("entry.\(p.name).removeAll()")
-                                .addLine("let \(p.name) = fromEntry.\(p.name).map { RLMDate(val: $0) }")
-                                .addLine("entry.\(p.name).append(objectsIn: \(p.name))")
-                    case .DoubleType:
-                        return line
-                                .addLine("entry.\(p.name).removeAll()")
-                                .addLine("let \(p.name) = fromEntry.\(p.name).map { RLMDouble(val: $0) }")
-                                .addLine("entry.\(p.name).append(objectsIn: \(p.name))")
-                    case .FloatType:
-                        return line
-                                .addLine("entry.\(p.name).removeAll()")
-                                .addLine("let \(p.name) = fromEntry.\(p.name).map { RLMFloat(val: $0) }")
-                                .addLine("entry.\(p.name).append(objectsIn: \(p.name))")
-                    case .BoolType:
-                        return line
-                                .addLine("entry.\(p.name).removeAll()")
-                                .addLine("let \(p.name) = fromEntry.\(p.name).map { RLMBool(val: $0) }")
-                                .addLine("entry.\(p.name).append(objectsIn: \(p.name))")
-                    case .DataType:
-                        return line
-                                .addLine("entry.\(p.name).removeAll()")
-                                .addLine("let \(p.name) = fromEntry.\(p.name).map { RLMData(val: $0) }")
-                                .addLine("entry.\(p.name).append(objectsIn: \(p.name))")
                     default:
                         return line
-                                .addLine("// FIX ME: Добавить работу с массивами простых типов для \(p.name)")
+                            .addLine("// FIX ME: Добавить работу с массивами простых типов для \(p.name)")
                     }
                 // Свойство
                 default:
@@ -179,6 +143,7 @@ private extension TranslatorImplementationWriter {
         }
     }
 
+    // fill entry
     func entityLines(klasses: [Klass], properties: [Property]) throws -> String {
         return properties.reduce("") { (line: String, p: Property) -> String in
             switch p.type {
@@ -195,6 +160,8 @@ private extension TranslatorImplementationWriter {
                  .OptionalType(wrapped: .FloatType):
                 return line
                     .addLine("entry.\(p.name).value = fromEntity.\(p.name)")
+            case .OptionalType(wrapped: .ArrayType(item: let t)):
+                return line.append(statementForParameter(p, type: t))
             default:
                 switch p.type {
                 // Relationship
@@ -208,12 +175,16 @@ private extension TranslatorImplementationWriter {
                     switch objectType {
                     case .ObjectType(let typename):
                         return line
-                                .addLine("\(typename)DAOTranslator().fill(entry.\(p.name), fromEntities: fromEntity.\(p.name))")
+                            .addLine("if !fromEntity.\(p.name).isEmpty {")
+                            .addLine("\(typename)DAOTranslator().fill(entry.\(p.name), fromEntities: fromEntity.\(p.name))".indent())
+                            .addLine("} else {")
+                            .addLine("entry.\(p.name).removeAll()".indent())
+                            .addLine("}")
                     case .ArrayType, .MapType:
                         fatalError()
                     default:
                         return line
-                                .addLine("entity.\(p.name) = fromEntity.\(p.name).map { $0.value }")
+                            .addLine(statementForParameter(p, type: p.type))
                     }
                 // Property
                 default:
@@ -237,6 +208,50 @@ private extension TranslatorImplementationWriter {
 
             return properties
         })
+    }
+    
+    
+    private func statementForParameter(_ parameter: Property, type: Typê) -> String {
+        switch type {
+        case .StringType:
+            return ""
+                .addLine("entry.\(parameter.name).removeAll()")
+                .addLine("let \(parameter.name) = fromEntity.\(parameter.name).map { RLMString(val: $0) }")
+                .addLine("entry.\(parameter.name).append(objectsIn: \(parameter.name))")
+        case .IntType:
+            return ""
+                .addLine("entry.\(parameter.name).removeAll()")
+                .addLine("let \(parameter.name) = fromEntity.\(parameter.name).map { RLMInteger(val: $0) }")
+                .addLine("entry.\(parameter.name).append(objectsIn: \(parameter.name))")
+        case .DateType:
+            return ""
+                .addLine("entry.\(parameter.name).removeAll()")
+                .addLine("let \(parameter.name) = fromEntity.\(parameter.name).map { RLMDate(val: $0) }")
+                .addLine("entry.\(parameter.name).append(objectsIn: \(parameter.name))")
+        case .DoubleType:
+            return ""
+                .addLine("entry.\(parameter.name).removeAll()")
+                .addLine("let \(parameter.name) = fromEntity.\(parameter.name).map { RLMDouble(val: $0) }")
+                .addLine("entry.\(parameter.name).append(objectsIn: \(parameter.name))")
+        case .FloatType:
+            return ""
+                .addLine("entry.\(parameter.name).removeAll()")
+                .addLine("let \(parameter.name) = fromEntity.\(parameter.name).map { RLMFloat(val: $0) }")
+                .addLine("entry.\(parameter.name).append(objectsIn: \(parameter.name))")
+        case .BoolType:
+            return ""
+                .addLine("entry.\(parameter.name).removeAll()")
+                .addLine("let \(parameter.name) = fromEntity.\(parameter.name).map { RLMBool(val: $0) }")
+                .addLine("entry.\(parameter.name).append(objectsIn: \(parameter.name))")
+        case .DataType:
+            return ""
+                .addLine("entry.\(parameter.name).removeAll()")
+                .addLine("let \(parameter.name) = fromEntity.\(parameter.name).map { RLMData(val: $0) }")
+                .addLine("entry.\(parameter.name).append(objectsIn: \(parameter.name))")
+        default:
+            return ""
+                .addLine("TODO")
+        }
     }
 
 }
