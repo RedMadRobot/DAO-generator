@@ -111,9 +111,18 @@ private extension TranslatorImplementationWriter {
                  .OptionalType(wrapped: .FloatType):
                 return line
                     .addLine("entity.\(p.name) = fromEntry.\(p.name).value")
-            case .OptionalType(wrapped: .ArrayType(item: _)):
-                return line
-                    .addLine("entity.\(p.name) = fromEntry.\(p.name).map { $0.value }")
+            case .OptionalType(wrapped: .ArrayType(item: let typename)):
+                switch typename {
+                case .ObjectType(name: let name):
+                    return line
+                        .addLine("entity.\(p.name) = fromEntry.\(p.name).map { _ in \(name)() }")
+                        .addLine("if !fromEntry.\(p.name).isEmpty {")
+                        .addLine("\(typename)DAOTranslator().fill(&entity.\(p.name)!, fromEntries: fromEntry.\(p.name))".indent())
+                        .addLine("}")
+                default:
+                    return line
+                        .addLine("entity.\(p.name) = fromEntry.\(p.name).map { $0.value }")
+                }
             default:
                 switch p.type {
                 // Relationship
