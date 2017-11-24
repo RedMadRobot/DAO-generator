@@ -182,7 +182,7 @@ private extension TranslatorImplementationWriter {
                     let type = typeDescription(t)
                     return line
                         .addLine("entry.\(p.name).removeAll()")
-                        .addLine("if let \(p.name) = fromEntity.\(p.name)?.map { \(type)(val: $0) } {")
+                        .addLine("if let \(p.name) = fromEntity.\(p.name)?.map({ \(type)(val: $0) }) {")
                         .addLine("entry.\(p.name).append(objectsIn: \(p.name))".indent())
                         .addLine("}")
                 default:
