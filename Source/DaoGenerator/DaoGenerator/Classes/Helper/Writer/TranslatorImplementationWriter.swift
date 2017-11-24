@@ -257,6 +257,13 @@ private extension TranslatorImplementationWriter {
                 .addLine("entry.\(parameter.name).removeAll()")
                 .addLine("let \(parameter.name) = fromEntity.\(parameter.name).map { RLMData(val: $0) }")
                 .addLine("entry.\(parameter.name).append(objectsIn: \(parameter.name))")
+        case .ObjectType(name: let name):
+            return ""
+                .addLine("if fromEntity.\(parameter.name)?.isEmpty == false {")
+                .addLine("\(name)DAOTranslator().fill(entry.\(parameter.name), fromEntities: fromEntity.\(parameter.name)!)".indent())
+                .addLine("} else {")
+                .addLine("entry.\(parameter.name).removeAll()".indent())
+                .addLine("}")
         default:
             return ""
                 .addLine("TODO")
