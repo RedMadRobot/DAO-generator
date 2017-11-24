@@ -160,10 +160,11 @@ private extension Application {
                 })
                 .filter { (element: Klass) -> Bool in
                     let isModelClass: Bool = element.isModel
-                    if debugMode && isModelClass {
+                    let isRealm: Bool = element.properties.reduce(false) { $0 || $1.realm() }
+                    if debugMode && isModelClass && isRealm {
                         print("Found model class " + element.name)
                     }
-                    return isModelClass
+                    return isModelClass && isRealm
                 }
     }
 
