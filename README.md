@@ -94,9 +94,16 @@ Table provides reference for type convertion from Entity to Entry properties:
 
 `git@github.com:RedMadRobot/DAO-generator.git`
 
-**2. Run `build.command` to build executable file.**
+**2. Init submodules in your project.**
 
-**3. Add run script phase in Xcode.**
+```bash
+git submodule init
+git submodule update
+```
+
+**3. Run `build.command` to build executable file.**
+
+**4. Add run script phase in Xcode.**
 
 Available arguments
 
@@ -109,4 +116,4 @@ Available arguments
 | output_translator | Path to the folder, where generated translator files should be placed             | DaoGenerator -output_translator "./Generated" |
 | debug             | Forces generator to print names of analyzed input files and generated translators | DaoGenerator -debug                           |
 
-**4. Add generated files manually to your project.**
+**5. Add generated files manually to your project.**
