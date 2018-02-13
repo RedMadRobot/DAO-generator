@@ -3,6 +3,8 @@ DAOGenerator
 
 > Binary file can be installed via cocoapods ([link](https://github.com/RedMadRobot/cocoapods-specs)).
 
+> Each time you update repository ensure to draft new release, info can be found [here](https://github.com/RedMadRobot/cocoapods-specs/blob/master/README.md).
+
 Imagine you want to save your objects in a database. It's not complicated so often, but little amount of engineers understand databases completely. This leads to buggy code, especially if you pass objects through threads and so on. 
 In this situation you can abstract from specific database and use iniversal CRUD interface. So you can use our library called [DAO](https://github.com/RedMadRobot/DAO).
 The problem is your count of model objects increases more boilerplate code you should type. This library will help you to save your time writing Translators and database objects(Entry) based on Entity classes annotations.
