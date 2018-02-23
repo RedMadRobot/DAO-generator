@@ -121,33 +121,30 @@ private extension TranslatorImplementationWriter {
                         .addLine("}")
                 default:
                     return line
-                        .addLine("entity.\(p.name) = fromEntry.\(p.name).map { $0.value }")
+                        .addLine("entity.\(p.name) = fromEntry.\(p.name).map { $0 }")
                 }
-            default:
-                switch p.type {
-                // Relationship
+            // Relationship
+            case .ObjectType(let typename):
+                return line
+                    .addLine("if let entry = fromEntry.\(p.name) {")
+                    .addLine("\(typename)DAOTranslator().fill(entity.\(p.name), fromEntry: entry)".indent())
+                    .addLine("}")
+            // Collection
+            case .ArrayType(let objectType):
+                switch objectType {
                 case .ObjectType(let typename):
                     return line
-                        .addLine("if let entry = fromEntry.\(p.name) {")
-                        .addLine("\(typename)DAOTranslator().fill(entity.\(p.name), fromEntry: entry)".indent())
-                        .addLine("}")
-                // Collection
-                case .ArrayType(let objectType):
-                    switch objectType {
-                    case .ObjectType(let typename):
-                        return line
-                            .addLine("\(typename)DAOTranslator().fill(&entity.\(p.name), fromEntries: fromEntry.\(p.name))")
-                    case .ArrayType, .MapType:
-                        fatalError()
-                    default:
-                        return line
-                            .addLine("// FIX ME: Добавить работу с массивами простых типов для \(p.name)")
-                    }
-                // Свойство
+                        .addLine("\(typename)DAOTranslator().fill(&entity.\(p.name), fromEntries: fromEntry.\(p.name))")
+                case .ArrayType, .MapType:
+                    fatalError()
                 default:
                     return line
-                        .addLine("entity.\(p.name) = fromEntry.\(p.name)")
+                        .addLine("entity.\(p.name) = fromEntry.\(p.name).map { $0 }")
                 }
+            // Свойство
+            default:
+                return line
+                    .addLine("entity.\(p.name) = fromEntry.\(p.name)")
             }
         }
     }
@@ -179,12 +176,9 @@ private extension TranslatorImplementationWriter {
                         .addLine("entry.\(p.name).removeAll()".indent())
                         .addLine("}")
                 case .StringType, .IntType, .DateType, .DoubleType, .FloatType, .BoolType, .DataType:
-                    let type = typeDescription(t)
                     return line
                         .addLine("entry.\(p.name).removeAll()")
-                        .addLine("if let \(p.name) = fromEntity.\(p.name)?.map({ \(type)(val: $0) }) {")
-                        .addLine("entry.\(p.name).append(objectsIn: \(p.name))".indent())
-                        .addLine("}")
+                        .addLine("entry.\(p.name).append(objectsIn: fromEntity?.\(p.name) ?? [])")
                 default:
                     return line
                         .addLine("TODO")
@@ -199,11 +193,9 @@ private extension TranslatorImplementationWriter {
             case .ArrayType(let objectType):
                 switch objectType {
                 case .StringType, .IntType, .DateType, .DoubleType, .FloatType, .BoolType, .DataType:
-                    let type = typeDescription(objectType)
                     return line
                         .addLine("entry.\(p.name).removeAll()")
-                        .addLine("let \(p.name) = fromEntity.\(p.name).map { \(type)(val: $0) }")
-                        .addLine("entry.\(p.name).append(objectsIn: \(p.name))")
+                        .addLine("entry.\(p.name).append(objectsIn: fromEntity.\(p.name))")
                 case .ObjectType(let typename):
                     return line
                         .addLine("if !fromEntity.\(p.name).isEmpty {")
@@ -235,27 +227,6 @@ private extension TranslatorImplementationWriter {
 
             return properties
         })
-    }
-
-    private func typeDescription(_ type: Typê) -> String {
-        switch type {
-        case .StringType:
-            return "RLMString"
-        case .DataType:
-            return "RLMData"
-        case .IntType:
-            return "RLMInteger"
-        case .DateType:
-            return "RLMDate"
-        case .DoubleType:
-            return "RLMDouble"
-        case .FloatType:
-            return "RLMFloat"
-        case .BoolType:
-            return "RLMBool"
-        default:
-            return "TODO"
-        }
     }
     
 }
