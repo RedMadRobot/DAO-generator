@@ -90,19 +90,19 @@ private extension ModelImplementationWriter {
                 case .ObjectType(let typename):
                     statement = "let \(p.name) = List<DB\(typename)>()"
                 case .IntType:
-                    statement = "let \(p.name) = List<RLMInteger>()"
+                    statement = "let \(p.name) = List<Int>()"
                 case .DateType:
-                    statement = "let \(p.name) = List<RLMDate>()"
+                    statement = "let \(p.name) = List<Date>()"
                 case .DataType:
-                    statement = "let \(p.name) = List<RLMData>()"
+                    statement = "let \(p.name) = List<Data>()"
                 case .DoubleType:
-                    statement = "let \(p.name) = List<RLMDouble>()"
+                    statement = "let \(p.name) = List<Double>()"
                 case .StringType:
-                    statement = "let \(p.name) = List<RLMString>()"
+                    statement = "let \(p.name) = List<String>()"
                 case .FloatType:
-                    statement = "let \(p.name) = List<RLMFloat>()"
+                    statement = "let \(p.name) = List<Float>()"
                 case .BoolType:
-                    statement = "let \(p.name) = List<RLMBool>()"
+                    statement = "let \(p.name) = List<Bool>()"
                 case .ArrayType, .MapType:
                     statement = "TODO"
                 default:
@@ -167,19 +167,19 @@ private extension ModelImplementationWriter {
             case .ObjectType(let typename):
                 statement = "let \(parameter.name) = List<DB\(typename)>()"
             case .IntType:
-                statement = "let \(parameter.name) = List<RLMInteger>()"
+                statement = "let \(parameter.name) = List<Int>()"
             case .DateType:
-                statement = "let \(parameter.name) = List<RLMDate>()"
+                statement = "let \(parameter.name) = List<Date>()"
             case .DataType:
-                statement = "let \(parameter.name) = List<RLMData>()"
+                statement = "let \(parameter.name) = List<Data>()"
             case .DoubleType:
-                statement = "let \(parameter.name) = List<RLMDouble>()"
+                statement = "let \(parameter.name) = List<Double>()"
             case .StringType:
-                statement = "let \(parameter.name) = List<RLMString>()"
+                statement = "let \(parameter.name) = List<String>()"
             case .FloatType:
-                statement = "let \(parameter.name) = List<RLMFloat>()"
+                statement = "let \(parameter.name) = List<Float>()"
             case .BoolType:
-                statement = "let \(parameter.name) = List<RLMBool>()"
+                statement = "let \(parameter.name) = List<Bool>()"
             case .ArrayType, .MapType:
                 statement = "TODO"
             default:
