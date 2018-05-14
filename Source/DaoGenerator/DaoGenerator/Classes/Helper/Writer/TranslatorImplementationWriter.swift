@@ -178,7 +178,7 @@ private extension TranslatorImplementationWriter {
                 case .StringType, .IntType, .DateType, .DoubleType, .FloatType, .BoolType, .DataType:
                     return line
                         .addLine("entry.\(p.name).removeAll()")
-                        .addLine("entry.\(p.name).append(objectsIn: fromEntity?.\(p.name) ?? [])")
+                        .addLine("entry.\(p.name).append(objectsIn: fromEntity.\(p.name) ?? [])")
                 default:
                     return line
                         .addLine("TODO")
